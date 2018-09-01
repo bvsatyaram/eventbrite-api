@@ -6,6 +6,10 @@ module Eventbrite
           'events'
         end
 
+        def delete(id)
+          self.delete("events/#{id}", {}, {})
+        end
+
         def search(opts={})
           self.get(opts, 'search')
         end
