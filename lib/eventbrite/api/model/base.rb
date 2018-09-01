@@ -32,8 +32,8 @@ module Eventbrite
           @client.connection.post(url(opts, id), {:headers => @client.headers, :body => object.to_json})
         end
 
-        def delete(id)
-          @client.connection.delete(url({}, id), {:headers => @client.headers, :body => object.to_json})
+        def del(opts={}, id)
+          @client.connection.delete(url(opts, id), {:headers => @client.headers})
         end
 
         def all(opts)

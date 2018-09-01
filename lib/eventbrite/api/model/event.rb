@@ -7,7 +7,7 @@ module Eventbrite
         end
 
         def delete(id)
-          self.delete("#{id}", {}, {})
+          self.del({}, id)
         end
 
         def search(opts={})
