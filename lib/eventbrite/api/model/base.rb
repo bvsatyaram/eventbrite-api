@@ -32,6 +32,10 @@ module Eventbrite
           @client.connection.post(url(opts, id), {:headers => @client.headers, :body => object.to_json})
         end
 
+        def delete(id, object, opts={})
+          @client.connection.delete(url(opts, id), {:headers => @client.headers, :body => object.to_json})
+        end
+
         def all(opts)
           all_pages = get(opts)
           while @pagination && @pagination['page_number'] < @pagination['page_count']
